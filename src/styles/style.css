@@ -5,8 +5,9 @@
 
 :root {
   line-height: 1.5;
-  --backgroundColor: rgb(72, 46, 38);
-  --fontColor: rgb(253, 246, 211);
+  --backgroundColor: rgb(126, 153, 198);
+  --fontColor2: rgb(240, 194, 93);
+  --fontColor3: rgb(89, 220, 139);
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -29,3 +30,110 @@ img {
 }
 
 /* DANTE CODE HERE -----------*/
+
+@font-face {
+  font-family: "Rust Base";
+  src: url(../Fonts/My_Fontspring_Fonts_Order_100493498/Fonts/introheadr-base.otf);
+}
+@font-face {
+  font-family: "Rust Base2Line";
+  src: url(../Fonts/My_Fontspring_Fonts_Order_100493498/Fonts/introrustg-base2line.otf);
+}
+
+body{
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr 50px;
+  grid-template-rows: 50px 1.2fr auto 5fr 50px;
+  background-color: var(--backgroundColor);
+}
+
+header {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 1;
+  justify-self: center;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-family: "Rust Base2Line";
+  font-size: 2rem;
+  
+}
+
+.content{
+  grid-column: 2 / span 3;
+  grid-row: 3 / span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px auto 1fr 1fr 1fr;
+}
+
+.project {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: "Rust Base";
+  font-size: 1.5rem;
+  justify-self: center;
+}
+
+.project select {
+  background-color: transparent;
+  border: 2px white solid;
+  outline: none;
+  text-align: center;
+  color: var(--fontColor2);
+  font-size: 1.6rem;
+}
+
+.project select:hover {
+  border: 2px var(--fontColor3) solid;
+}
+
+.addToDo {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-self: center;
+  align-self: center;
+  gap: 20px;
+  font-family: "Rust Base";
+  font-size: 1.2rem;
+  color: var(--fontColor2);
+}
+
+.submit {
+  grid-column: 3;
+  align-self: center ;
+  background-color: var(--fontColor2);
+  border: 2px white solid;
+}
+
+.submit:hover {
+  border: 2px var(--fontColor3) solid;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.toDos {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  font-family: "Rust Base";
+  font-size: 1.2rem;
+  color: var(--fontColor2);
+}

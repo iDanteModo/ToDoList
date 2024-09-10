@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Page</title>
+    <title>Taskaroo</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <button id="home">HOME</button>
-            <button id="menu">MENU</button>
-            <button id="about">ABOUT</button>
-        </nav>
+        <div class="logo">
+            <img src="Photos/logo-transparent.png" alt="">
+            <h1>Taskaroo</h1>
+        </div>
     </header>
-    <div id="content">
+    <div class="content" id="content">
+        <div class="project" id="projects">
+            <label for="project">Select Project:</label>
+            <select name="project" id="project">
+            <option value="Dante">Dante</option>
+            <option value="Christina">Christina</option>
+            <option value="Taskaroo">Taskaroo</option>
+            </select>
+        </div>
+        <div class="toDos" id="toDos">
+        </div>
+        <form class="addToDo">
+            <div class="rows">
+                <label for="title">Task Name</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="rows">
+                <label for="description">Description</label>
+                <input type="text" id="description" required>
+            </div>
+            <div class="rows">
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" required>
+            </div>
+            <div class="rows">
+                <label for="priority">Priority</label>
+                <input type="range" min="1" max="5" id="priority" required>
+            </div>
+            <div class="rows">
+                <label for="checkList">Done</label>
+                <input type="checkbox" id="checkList">
+            </div>
+            <button type="submit" id="submit" class="submit">Add Task</button>
+        </form> 
     </div>
 </body>
 </html>
