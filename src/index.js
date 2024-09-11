@@ -6,6 +6,7 @@ import { updateDOM } from "./js/updateDOM";
 import { updateToDos } from "./js/updateToDos";
 import { addToDo } from "./js/addToDos";
 import { ToDo } from "./js/toDoClass";
+import { removeToDo } from "./js/removeToDos";
 
 export let myToDos = [];
 
@@ -21,6 +22,7 @@ newToDo.displayToDo();
 
 projectSelected();
 addToDo();
+removeToDo();
 
 
 

@@ -13,17 +13,15 @@ export function projectSelected() {
             const description = document.createElement('p');
             const dueDate = document.createElement('p');
             const priority = document.createElement('p');
+            const checkBox = document.createElement('input');
+            const toDoList = document.querySelector('.toDos')
+            checkBox.type = "checkbox";
             if(value == toDo.name){
                 updateDOM(".toDos", `<h2 data-index = ${toDo.title}>${toDo.title}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.description}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.dueDate}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.priority}</h2>`);
-                if (toDo.checkList == "on"){
-                    updateDOM(".toDos", `<input type="checkbox" checked>`);
-                }else {
-                    updateDOM(".toDos", `<input type="checkbox" checked>`);
-                }
-
+                toDoList.appendChild(checkBox);                    
             }
         })
     })
