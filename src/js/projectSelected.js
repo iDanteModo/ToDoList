@@ -16,12 +16,23 @@ export function projectSelected() {
             const checkBox = document.createElement('input');
             const toDoList = document.querySelector('.toDos')
             checkBox.type = "checkbox";
+            checkBox.classList.add('task');
+            checkBox.checked = false;
             if(value == toDo.name){
                 updateDOM(".toDos", `<h2 data-index = ${toDo.title}>${toDo.title}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.description}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.dueDate}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.priority}</h2>`);
-                toDoList.appendChild(checkBox);                    
+                toDoList.appendChild(checkBox); 
+                checkBox.addEventListener("change", () => {
+                    if (toDo.checkList == "off"){
+                        toDo.checkList =  "on";
+                        checkBox.checked = true;
+                    }else if (toDo.checkList == "on"){
+                        toDo.checkList = "off";
+                        checkBox.checked = false;
+                    }
+                })           
             }
         })
     })

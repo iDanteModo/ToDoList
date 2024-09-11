@@ -17,10 +17,11 @@ export function addToDo(){
         projectSelected();
         if(form.checkValidity()) {
             event.preventDefault();
-            const toDo = new ToDo(projectName.value, title.value, description.value, dueDate.value, priority.value, checkList.value)
+            const toDo = new ToDo(projectName.value, title.value, description.value, dueDate.value, priority.value, checkList.value = 'off');
             myToDos.push(toDo);
-            console.table(myToDos);
             updateToDos(projectName);
+            console.log(`generated checklist value is ${checkList.value}`);
+            console.table(myToDos);
         }
     })
 }

@@ -13,7 +13,7 @@ export let myToDos = [];
 localStorage();
 dateFormat();
 
-const newToDo = new ToDo("Dante", "do the dishes", "Description", "12.09", "TOP", "on");
+const newToDo = new ToDo("Dante", "do the dishes", "Description", "12.09", "TOP", "off");
 const newToDo2 = new ToDo("Christina", "do the laundry", "Description2", "12.09", "TOP", "off");
 myToDos.push(newToDo);
 myToDos.push(newToDo2);
@@ -23,6 +23,7 @@ newToDo.displayToDo();
 projectSelected();
 addToDo();
 removeToDo();
+
 
 
 

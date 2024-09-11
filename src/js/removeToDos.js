@@ -1,10 +1,22 @@
 import { myToDos } from "../index.js";
-// import { updateToDos } from "./js/updateToDos";
+import { addToDo } from "./addToDos.js";
+import { updateToDos } from "./updateToDos.js";
 
 
 export function removeToDo() {
-    console.table(myToDos);
-    myToDos.forEach(toDo => {
-        console.log(toDo.checkList);
-    })
-}
+     const tasks  = document.querySelectorAll('.task');
+     const projectName = document.querySelector('select');
+     tasks.forEach(task => {
+        task.addEventListener("change", () => {
+            if(myToDos.length > 2) {
+                let taskIndex = myToDos.findIndex(toDo => toDo.checkList == "on");
+                if (taskIndex != -1 ){
+                   myToDos.splice(taskIndex, 1);
+                }
+                console.table(myToDos);
+                updateToDos(projectName);
+            }
+        }
+        )
+     })
+     }
