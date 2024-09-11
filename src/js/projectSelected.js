@@ -1,5 +1,6 @@
 import { myToDos } from "../index.js";
 import { updateDOM, resetDOM } from "./updateDOM.js";
+import { priorityColor } from "./priorityColor.js";
 
 export function projectSelected() {
     const projectSelected = document.querySelector("select")
@@ -22,7 +23,7 @@ export function projectSelected() {
                 updateDOM(".toDos", `<h2 data-index = ${toDo.title}>${toDo.title}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.description}</h2>`);
                 updateDOM(".toDos", `<h2>${toDo.dueDate}</h2>`);
-                updateDOM(".toDos", `<h2>${toDo.priority}</h2>`);
+                updateDOM(".toDos", `<h2 data-index = P${toDo.priority}>${toDo.priority}</h2>`);
                 toDoList.appendChild(checkBox); 
                 checkBox.addEventListener("change", () => {
                     if (toDo.checkList == "off"){
@@ -33,6 +34,7 @@ export function projectSelected() {
                         checkBox.checked = false;
                     }
                 })           
+                priorityColor();
             }
         })
     })

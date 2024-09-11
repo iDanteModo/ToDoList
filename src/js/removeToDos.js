@@ -8,7 +8,7 @@ export function removeToDo() {
      const projectName = document.querySelector('select');
      tasks.forEach(task => {
         task.addEventListener("change", () => {
-            if(myToDos.length > 2) {
+            if(myToDos.length > 0) {
                 let taskIndex = myToDos.findIndex(toDo => toDo.checkList == "on");
                 if (taskIndex != -1 ){
                    myToDos.splice(taskIndex, 1);

@@ -109,6 +109,10 @@ header {
   color: var(--fontColor2);
 }
 
+input[type="range"] {
+  accent-color: var(--fontColor3);
+}
+
 .submit {
   grid-column: 3;
   align-self: center ;
