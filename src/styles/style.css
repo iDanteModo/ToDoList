@@ -85,6 +85,7 @@ header {
 .project select {
   background-color: transparent;
   border: 2px white solid;
+  border-radius: 5px;
   outline: none;
   text-align: center;
   color: var(--fontColor2);
@@ -111,6 +112,21 @@ header {
 
 input[type="range"] {
   accent-color: var(--fontColor3);
+  cursor: pointer;
+}
+
+input {
+  border-radius: 5px;
+  border: transparent;
+  outline: transparent;
+}
+
+input::placeholder {
+  align-self: center;
+  justify-self: center;
+  color: black;
+  opacity: 0.6;
+  text-align: center;
 }
 
 .submit {
@@ -118,6 +134,7 @@ input[type="range"] {
   align-self: center ;
   background-color: var(--fontColor2);
   border: 2px white solid;
+  border-radius: 5px;
 }
 
 .submit:hover {
@@ -140,4 +157,74 @@ input[type="range"] {
   font-family: "Rust Base";
   font-size: 1.2rem;
   color: var(--fontColor2);
+}
+
+/* HAMBURGER CODE  */
+
+/* Base styles for form toggle animation */
+.form-wrapper {
+  position: relative; /* Allows positioning relative to this container */
+  max-width: 100%;
+}
+
+#toggleForm {
+  display: none; /* Hide checkbox */
+}
+
+.form-container {
+  grid-column: 1 / span 3 ;
+  grid-row: 3;
+  position: relative; /* Position relative to the button */
+  margin-top: 1rem; /* Space above the form */
+  border-radius: 0.3rem;
+  width: 100%; /* Make it fit within its container */
+  height: auto;
+  padding: 1rem;
+  transform: scaleY(0); /* Hidden by scaling vertically */
+  transform-origin: top; /* Scale from the top */
+  transition: transform 0.35s ease-in, opacity 0.35s ease-in;
+  z-index: 1;
+  opacity: 0; /* Start hidden */
+  pointer-events: none; /* Disable interaction */
+}
+
+/* Add Task button */
+.add-task-button {
+  grid-column: 1 / span 3;
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--fontColor2);
+  color: black;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+  transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.add-task-button:hover {
+  background-color: var(--fontColor3);
+}
+
+/* Show the form when checkbox is checked */
+#toggleForm:checked ~ .form-container {
+  transform: scaleY(1); /* Expand vertically */
+  opacity: 1; /* Make visible */
+  pointer-events: auto; /* Enable interaction */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    width: 100%;
+  }
 }
