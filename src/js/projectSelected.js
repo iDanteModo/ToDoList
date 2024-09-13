@@ -1,6 +1,7 @@
 import { myToDos } from "../index.js";
 import { updateDOM, resetDOM } from "./updateDOM.js";
 import { priorityColor } from "./priorityColor.js";
+import { removeToDo } from "./removeToDos.js";
 
 export function projectSelected() {
     const projectSelected = document.querySelector("select")
@@ -35,6 +36,7 @@ export function projectSelected() {
                     }
                 })           
                 priorityColor();
+                removeToDo();
             }
         })
     })

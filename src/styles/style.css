@@ -43,14 +43,14 @@ img {
 body{
   height: 100svh;
   display: grid;
-  grid-template-columns: 50px 1fr 1fr 1fr 50px;
-  grid-template-rows: 50px 1.2fr auto 5fr 50px;
+  grid-template-columns: 50px 0.6fr 1fr 1fr 50px;
+  grid-template-rows: 50px 1.2fr 1fr 4fr 50px;
   background-color: var(--backgroundColor);
 }
 
 header {
-  grid-column: 2 / span 3;
-  grid-row: 2 / span 1;
+  grid-column: 2;
+  grid-row: 2;
   justify-self: center;
 }
 
@@ -62,7 +62,7 @@ header {
   align-items: center;
   justify-items: center;
   font-family: "Rust Base2Line";
-  font-size: 2rem;
+  font-size: 1.8rem;
   
 }
 
@@ -74,12 +74,19 @@ header {
   grid-template-rows: 50px auto 1fr 1fr 1fr;
 }
 
+.border {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 5;
+  border-right: 2px var(--fontColor2) solid;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
 .project {
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  grid-row: 2;
   font-family: "Rust Base";
   font-size: 1.5rem;
-  justify-self: center;
 }
 
 .project select {
@@ -90,15 +97,40 @@ header {
   text-align: center;
   color: var(--fontColor2);
   font-size: 1.6rem;
+  transition: border 0.7s;
 }
 
 .project select:hover {
   border: 2px var(--fontColor3) solid;
 }
 
+.tasksTitle {
+  grid-column: 3 / span 2 ;
+  grid-row: 2;
+  font-family: "Rust Base2Line";
+  font-size: 2rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.addProjectsButton {
+  justify-self: center;
+  align-self: center;
+  background-color: transparent;
+  border: 2px transparent solid;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--fontColor2);
+  transition: color 0.7s linear;
+}
+
+.addProjectsButton:hover {
+  color: var(--fontColor3);
+}
+
 .addToDo {
-  grid-column: 1 / span 3;
-  grid-row: 3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -133,12 +165,13 @@ input::placeholder {
   grid-column: 3;
   align-self: center ;
   background-color: var(--fontColor2);
-  border: 2px white solid;
+  border: transparent;
   border-radius: 5px;
+  transition: background-color 0.7s linear;
 }
 
 .submit:hover {
-  border: 2px var(--fontColor3) solid;
+  background-color: var(--fontColor3);
 }
 
 .rows {
@@ -149,7 +182,7 @@ input::placeholder {
 }
 
 .toDos {
-  grid-column: 1 / span 3;
+  grid-column: 2 / span 3;
   grid-row: 2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -172,14 +205,13 @@ input::placeholder {
 }
 
 .form-container {
-  grid-column: 1 / span 3 ;
-  grid-row: 3;
-  position: relative; /* Position relative to the button */
-  margin-top: 1rem; /* Space above the form */
-  border-radius: 0.3rem;
+  grid-column: 2 / span 2 ;
+  grid-row: 4 / span 3;
+  margin-top: 5px; /* Space above the form */
   width: 100%; /* Make it fit within its container */
-  height: auto;
-  padding: 1rem;
+  height: 20%;
+  min-height: 20%;
+  padding: 10px;
   transform: scaleY(0); /* Hidden by scaling vertically */
   transform-origin: top; /* Scale from the top */
   transition: transform 0.35s ease-in, opacity 0.35s ease-in;
@@ -190,8 +222,8 @@ input::placeholder {
 
 /* Add Task button */
 .add-task-button {
-  grid-column: 1 / span 3;
-  grid-row: 4;
+  grid-column: 2 / span 3;
+  grid-row: 3;
   align-self: center;
   justify-self: center;
   background-color: var(--fontColor2);
@@ -201,8 +233,8 @@ input::placeholder {
   border: none;
   border-radius: 0.3rem;
   font-size: 1rem;
-  margin-top: 2rem;
-  transition: background-color 0.3s linear, color 0.3s linear;
+  margin-top: 100px;
+  transition: background-color 0.7s linear, color 0.7s linear;
 }
 
 .add-task-button:hover {
@@ -227,4 +259,45 @@ input::placeholder {
   .form-container {
     width: 100%;
   }
+}
+
+.modal-close {
+  display: none;
+}
+
+.modal-open {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 4;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--fontColor2);
+  width: 30%;
+  height: 30%;
+  font-family: "Rust Base";
+  font-size: 1.5rem;
+  z-index: 100;
+}
+
+.projectColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#modal button {
+  background-color: var(--fontColor3);
+  border: 2px var(--backgroundColor) solid;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#modal button:hover {
+  border: 2px white solid !important;
+  cursor: pointer;
 }

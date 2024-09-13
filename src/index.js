@@ -7,6 +7,7 @@ import { updateToDos } from "./js/updateToDos";
 import { addToDo } from "./js/addToDos";
 import { ToDo } from "./js/toDoClass";
 import { removeToDo } from "./js/removeToDos";
+import { addProject } from "./js/addProjectButton";
 
 export let myToDos = [];
 
@@ -22,7 +23,8 @@ newToDo.displayToDo();
 
 projectSelected();
 addToDo();
-removeToDo();
+addProject();
+
 
 
 

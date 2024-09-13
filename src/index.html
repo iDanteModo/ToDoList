@@ -13,25 +13,32 @@
             <h1>Taskaroo</h1>
         </div>
     </header>
+    <div class="modal-close" id="modal">
+        <h1>New Project</h1>
+        <div class="projectColumn">
+            <label for="newProject">Project name</label>
+            <input type="text" id="newProjectName">
+        </div>
+        <button id="submitProject">Add Project</button>
+    </div>
+    <div class="border"></div>
+    <div class="tasksTitle">
+        <h1>TASKS</h1>
+    </div>
     <div class="content" id="content">
         <div class="project" id="projects">
-            <label for="project">Select Project:</label>
+            <label for="project">Project:</label>
             <select name="project" id="project">
+                <option value="Taskaroo">Taskaroo</option>
                 <option value="Dante">Dante</option>
                 <option value="Christina">Christina</option>
-                <option value="Taskaroo">Taskaroo</option>
             </select>
+            <button id="addProjectsButton" class="addProjectsButton">+</button>
         </div>
         <div class="toDos" id="toDos">
         </div>
-    
-        <!-- Checkbox to toggle form visibility -->
         <input type="checkbox" id="toggleForm" hidden>
-    
-        <!-- Add Task button -->
         <label for="toggleForm" class="add-task-button">Add Task</label>
-    
-        <!-- Form container -->
         <div class="form-container">
             <form class="addToDo" onsubmit="return false">
                 <div class="rows">
