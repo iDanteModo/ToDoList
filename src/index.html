@@ -1,75 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taskaroo</title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <img src="Photos/logo-transparent.png" alt="">
-            <h1>Taskaroo</h1>
-        </div>
+      <div class="logo">
+        <img src="Photos/logo-transparent.png" alt="" />
+        <h1>Taskaroo</h1>
+      </div>
     </header>
     <div class="modal-close" id="modal">
-        <h1>New Project</h1>
-        <h1 class="topRight">X</h1>
-        <div class="projectColumn">
-            <label for="newProject">Project name</label>
-            <input type="text" id="newProjectName">
-        </div>
-        <button id="submitProject">Add Project</button>
+      <h1>New Project</h1>
+      <h1 class="topRight">X</h1>
+      <div class="projectColumn">
+        <label for="newProject">Project name</label>
+        <input type="text" id="newProjectName" />
+      </div>
+      <button id="submitProject">Add Project</button>
     </div>
     <div class="border"></div>
     <div class="tasksTitle">
-        <h1>TASKS</h1>
+      <h1>TASKS</h1>
     </div>
     <div class="content" id="content">
-        <div class="taskTemplate">
-            <h1>Name</h1>
-            <h1>Description</h1>
-            <h1>Due Date</h1>
-            <h1>Priority</h1>
-            <h1>Done</h1>
-        </div>
-        <div class="project" id="projects">
-            <label for="project">Project:</label>
-            <select name="project" id="project">
-                <option value="Taskaroo">Taskaroo</option>
-                <option value="Dante">Dante</option>
-                <option value="Christina">Christina</option>
-            </select>
-            <button id="addProjectsButton" class="addProjectsButton">+</button>
-        </div>
-        <div class="toDos" id="toDos">
-        </div>
-        <input type="checkbox" id="toggleForm" hidden>
-        <label for="toggleForm" class="add-task-button">Add Task</label>
-        <div class="form-container">
-            <form class="addToDo" onsubmit="return false">
-                <div class="rows">
-                    <label for="title">Task Name</label>
-                    <input type="text" id="title" placeholder="..." required>
-                </div>
-                <div class="rows">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" required placeholder="...">
-                </div>
-                <div class="rows">
-                    <label for="dueDate">Due Date</label>
-                    <input type="date" id="dueDate" required>
-                </div>
-                <div class="rows">
-                    <label for="priority">Priority</label>
-                    <input type="range" min="1" max="5" value="1" id="priority" required>
-                </div>
-                <div class="rows">
-                    <label for="checkList"></label>
-                    <input type="checkbox" id="checkList" hidden>
-                </div>
-                <button type="submit" id="submit" class="submit">Add Task</button>
-            </form> 
-        </div>
+      <div class="taskTemplate">
+        <h1>Name</h1>
+        <h1>Description</h1>
+        <h1>Due Date</h1>
+        <h1>Priority</h1>
+        <h1>Done</h1>
+      </div>
+      <div class="project" id="projects">
+        <label for="project">Project:</label>
+        <select name="project" id="project">
+          <option value="Taskaroo">Taskaroo</option>
+          <option value="Dante">Dante</option>
+          <option value="Christina">Christina</option>
+        </select>
+        <button id="addProjectsButton" class="addProjectsButton">+</button>
+      </div>
+      <div class="toDos" id="toDos"></div>
+      <input type="checkbox" id="toggleForm" hidden />
+      <label for="toggleForm" class="add-task-button">Add Task</label>
+      <div class="form-container">
+        <form class="addToDo" onsubmit="return false">
+          <div class="rows">
+            <label for="title">Task Name</label>
+            <input type="text" id="title" placeholder="..." required />
+          </div>
+          <div class="rows">
+            <label for="description">Description</label>
+            <input type="text" id="description" required placeholder="..." />
+          </div>
+          <div class="rows">
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" required />
+          </div>
+          <div class="rows">
+            <label for="priority">Priority</label>
+            <input
+              type="range"
+              min="1"
+              max="5"
+              value="1"
+              id="priority"
+              required
+            />
+          </div>
+          <div class="rows">
+            <label for="checkList"></label>
+            <input type="checkbox" id="checkList" hidden />
+          </div>
+          <button type="submit" id="submit" class="submit">Add Task</button>
+        </form>
+      </div>
     </div>
+  </body>
+</html>
