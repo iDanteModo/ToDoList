@@ -1,5 +1,3 @@
-import { myToDos } from "../index.js";
-import { updateDOM, resetDOM } from "./updateDOM.js";
 import { removeToDo } from "./removeToDos.js";
 
 export function updateToDos(element) {

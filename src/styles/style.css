@@ -244,7 +244,6 @@ input::placeholder {
   border-radius: 0.3rem;
   font-size: 1rem;
   margin-top: 100px;
-  margin-right: 1vw;
   transition: background-color 0.7s linear, color 0.7s linear;
 }
 
@@ -306,9 +305,16 @@ input::placeholder {
   border: 2px var(--backgroundColor) solid;
   padding: 10px;
   cursor: pointer;
+  transition: border 0.7s ease-in-out;
 }
 
 #modal button:hover {
-  border: 2px white solid !important;
+  border: 2px white solid;
   cursor: pointer;
+}
+
+.topRight {
+  position: relative;
+  top: 200;
+  right: 0;
 }

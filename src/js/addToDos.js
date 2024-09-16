@@ -12,6 +12,7 @@ export function addToDo(){
     const priority = document.querySelector('#priority');
     const checkList = document.querySelector('#checkList');
     const addButton = document.querySelector("#submit");
+    description.classList.add("description");
 
     addButton.addEventListener("click", () => {
         projectSelected();

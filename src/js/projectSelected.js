@@ -11,12 +11,8 @@ export function projectSelected() {
         let text = projectSelected.options[projectSelected.selectedIndex].text;
         console.log(`Value is ${value}, Text is ${text}`);
         myToDos.forEach((toDo) => {
-            const title = document.createElement("p");
-            const description = document.createElement('p');
-            const dueDate = document.createElement('p');
-            const priority = document.createElement('p');
             const checkBox = document.createElement('input');
-            const toDoList = document.querySelector('.toDos')
+            const toDoList = document.querySelector('.toDos');
             checkBox.type = "checkbox";
             checkBox.classList.add('task');
             checkBox.checked = false;
